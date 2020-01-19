@@ -1,0 +1,165 @@
+﻿<Window
+    x:Class="EnkuDesigns.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EnkuDesigns"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:EnkuDesigns.Pages"
+    Title="Enku Design"
+    Width="1300"
+    Height="800"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <materialDesign:DrawerHost x:Name="Drawer_host" Background="#121212">
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <StackPanel Width="350" Margin="0">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        <Image Source="C:\Users\Anzzi\Desktop\ENKU3.png" />
+                    </Grid>
+                    <ListView
+                        x:Name="ListViewMenu"
+                        Padding="0,10,0,0"
+                        Foreground="#303f9f">
+                        <ListViewItem x:Name="paymentListView" Padding="0,8">
+                            <Button
+                                Width="200"
+                                Height="45"
+                                Padding="0"
+                                FontSize="15"
+                                Foreground="#3e3e3e"
+                                VerticalAlignment="Stretch"
+                                Click="ClosetButtonClicked"
+                                Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Left}"
+                                FontWeight="Regular"
+                                Style="{DynamicResource MaterialDesignFlatButton}">
+                                <DockPanel Width="164" Height="39">
+                                    <materialDesign:PackIcon
+                                        Width="30"
+                                        Height="30"
+                                        VerticalAlignment="Center"
+                                        Kind="TshirtV" />
+                                    <TextBlock Margin="22,0,0,0" VerticalAlignment="Center">Closet</TextBlock>
+                                </DockPanel>
+                            </Button>
+                        </ListViewItem>
+                        <ListViewItem x:Name="paymentListView2" Padding="0,8">
+                            <Button
+                                Width="200"
+                                Height="45"
+                                FontSize="15"
+                                Padding="0"
+                                Foreground="#3e3e3e"
+                                VerticalAlignment="Stretch"
+                                Click="AppointmentButtonClicked"
+                                Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Left}"
+                                FontWeight="Regular"
+                                Style="{DynamicResource MaterialDesignFlatButton}">
+                                <DockPanel Width="164" Height="39">
+                                    <materialDesign:PackIcon
+                                        Width="30"
+                                        Height="30"
+                                        VerticalAlignment="Center"
+                                        Kind="Note" />
+                                    <TextBlock Margin="22,0,0,0" VerticalAlignment="Center">Appointments</TextBlock>
+                                </DockPanel>
+                            </Button>
+                        </ListViewItem>
+
+                        <ListViewItem x:Name="paymentListView3" Padding="0,8">
+                            <Button
+                                Width="200"
+                                Height="45"
+                                FontSize="15"
+                                Padding="0"
+                                Foreground="#3e3e3e"
+                                VerticalAlignment="Stretch"
+                                Click="DailyTransactionButtonClicked"
+                                Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Left}"
+                                FontWeight="Regular"
+                                Style="{DynamicResource MaterialDesignFlatButton}">
+                                <DockPanel Width="164" Height="39">
+                                    <materialDesign:PackIcon
+                                        Width="30"
+                                        Height="30"
+                                        VerticalAlignment="Center"
+                                        Kind="BankTransfer" />
+                                    <TextBlock Margin="22,0,0,0" VerticalAlignment="Center">Transactions</TextBlock>
+                                </DockPanel>
+                            </Button>
+                        </ListViewItem>
+                        <Separator />                       
+                        <ListViewItem x:Name="settingListjView" Padding="0,8">
+                            <Button
+                                Width="200"
+                                Height="45"
+                                Foreground="#3e3e3e"
+                                FontSize="15"
+                                Click="logout"
+                                Padding="0"
+                                VerticalAlignment="Stretch"
+                                Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Left}"
+                                FontWeight="Regular"
+                                Style="{DynamicResource MaterialDesignFlatButton}">
+                                <DockPanel Width="164" Height="39">
+                                    <materialDesign:PackIcon
+                                        Width="30"
+                                        Height="30"
+                                        
+                                        VerticalAlignment="Center"
+                                        Kind="Logout" />
+                                    <TextBlock Margin="22,0,0,0" VerticalAlignment="Center">Log Out</TextBlock>
+                                </DockPanel>
+                            </Button>
+                        </ListViewItem>
+
+                    </ListView>
+                </StackPanel>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+            <Grid>
+                <!--  Color Zone  -->
+                <materialDesign:ColorZone Padding="16" Mode="PrimaryDark">
+                    <DockPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button
+                                x:Name="navDrawer"
+                                Width="25"
+                                Height="25"
+                                Padding="0"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Left}"
+                                Foreground="White">
+                                <materialDesign:PackIcon
+                                    Width="25"
+                                    Height="25"
+                                    Kind="Menu" />
+                            </Button>
+                            <TextBlock
+                                x:Name="TitleUserControl"
+                                Margin="12,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="23">
+                                ENKU DESIGN
+                            </TextBlock>
+                        </StackPanel>
+                    </DockPanel>
+                </materialDesign:ColorZone>
+
+                <!--  Working Area  -->
+                <Grid x:Name="WorkingArea" Margin="0,58,0,0">
+                    <!--<views:Appointments Margin="0,10,-0.4,0.4" Loaded="Appointments_Loaded" />-->
+                </Grid>
+            </Grid>
+        </materialDesign:DrawerHost>
+    </Grid>
+</Window>

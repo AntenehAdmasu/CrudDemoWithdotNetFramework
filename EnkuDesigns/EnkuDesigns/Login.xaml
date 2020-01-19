@@ -1,0 +1,145 @@
+﻿<Window x:Class="EnkuDesigns.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EnkuDesigns"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Login"  Height="550" Width="900" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30" Background="#242e62" MouseDown="MoveWindow">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Users" Margin="10 0 0 0" Foreground="White"/>
+                <TextBlock Foreground="White" Margin="10 0 0 0"
+                    Style="{StaticResource MaterialDesignCaptionTextBlock}">
+                    LOGIN
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button Click="MinimizeWindow" BorderBrush="{x:Null}" Background="{x:Null}" Padding="6" Height="30" Width="30">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border>
+                                            <Border.Style>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="#2f3b7d"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <Grid Background="Transparent">
+                                                <ContentPresenter></ContentPresenter>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <materialDesign:PackIcon Foreground="White" Kind="WindowMinimize" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Button>
+                <Button x:Name="closeButton" Click="CloseWindow" BorderBrush="{x:Null}" Background="{x:Null}" Padding="6" Height="30" Width="30">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border>
+                                            <Border.Style>
+                                                <Style TargetType="{x:Type Border}">
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="#df3400"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <Grid Background="Transparent">
+                                                <ContentPresenter></ContentPresenter>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <materialDesign:PackIcon Kind="WindowClose" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Margin="0 30 0 0">
+            <Grid Width="350" HorizontalAlignment="Left" Background="#37479d">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="./Resource/dress.png" Height="246" Width="238"/>
+                </StackPanel>
+
+            </Grid>
+            <Grid Margin="350,0,0,0">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <materialDesign:Card Width="240">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="140" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image
+                                        Source="./Resource/LoginPng.png"
+                                        Stretch="UniformToFill" />
+                            <Button
+                                        Grid.Row="0"
+                                        Margin="0,0,16,-20"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Bottom"
+                                        Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                                <materialDesign:PackIcon Kind="Login" />
+                            </Button>
+                            <StackPanel Grid.Row="1" Margin="8,24,8,4">
+                                <TextBlock HorizontalAlignment="Center" Margin="0" Style="{StaticResource MaterialDesignButtonTextBlock}">
+                                            LOGIN
+                                </TextBlock>
+                                <TextBox
+                                            x:Name="UserNameTextBlock"
+                                            Margin="5,5"
+                                            materialDesign:HintAssist.Hint="USER NAME"
+                                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                            ToolTip="Enter Ekub No of Payer" />
+                                <TextBlock x:Name="UserNameValidateTextBlock" Margin="5 0 0 0" FontSize="8" Foreground="Red"></TextBlock>
+                                <PasswordBox
+                                    Margin="5,5"
+                                     x:Name="passwordTextBlock"
+                                     materialDesign:HintAssist.Hint="PASSWORD"
+                                     Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                                <TextBlock x:Name="PasswordValidateTextBlock" Margin="5 0 0 0" FontSize="8" Foreground="Red"></TextBlock>
+                            </StackPanel>
+                            <Separator
+                                        Grid.Row="3"
+                                        Grid.RowSpan="3"
+                                        Margin="0,10,0,43.4"
+                                        Style="{StaticResource MaterialDesignDarkSeparator}" />
+                            <StackPanel
+                                        Grid.Row="5"
+                                        Margin="0,5,0,0"
+                                        Orientation="Vertical">
+                                <Button
+                                    Width="110"
+                                    Click="Loginn"
+                                    Content="LOGIN"
+                                    Style="{StaticResource MaterialDesignFlatButton}" />
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,351 @@
+﻿<UserControl
+    x:Class="EnkuDesigns.Pages.DailyTransaction"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EnkuDesigns.Pages"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="900"
+    d:DesignWidth="1224"
+    mc:Ignorable="d">
+    <Grid>
+        <ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+
+        <StackPanel        
+        Background="White"
+        RenderTransformOrigin="0,0">
+            <TextBlock
+            Margin="45,20,0,10"
+            VerticalAlignment="Center"
+            FontSize="25">
+            Daily Transaction
+            </TextBlock>
+            <Separator Margin="45,0,10,10" />
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+                <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Height="604" VerticalAlignment="Top">
+
+                    <materialDesign:Card Width="300" Margin="50,0,0,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="1" Margin="8,8,8,4">
+                                <TextBlock
+                                Margin="5,0,0,10"
+                                FontSize="22"
+                                Style="{StaticResource MaterialDesignSubheadingTextBlock}">
+                                SALES
+                                </TextBlock>
+                                <TextBox
+                                x:Name="solddress"
+                                Margin="5,0,0,5"
+                                FontSize="12"
+                                materialDesign:HintAssist.Hint="Sold dress code"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                <TextBox
+                                x:Name="sellprice"
+                                Margin="5,0,0,5"
+                                materialDesign:HintAssist.Hint="Price"
+                                FontSize="12"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                <TextBox
+                                x:Name="cashiersell"
+                                Margin="5,0,0,5"
+                                materialDesign:HintAssist.Hint="Cashier"
+                                FontSize="12"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+                                <DatePicker
+                                x:Name="Selldate"
+                                Margin="5,15,5,15"
+                                materialDesign:HintAssist.Hint="Date"
+                                FontSize="12" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="5" Orientation="Horizontal">
+                                <Button
+                                Width="200"
+                                Margin="50,10,0,10"
+                                VerticalAlignment="Center"
+                                Background="#e0e0e0"
+                                Click="AddSalesButtonClicked"
+                                Content="ADD"
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+
+                    <materialDesign:Card Width="300" Margin="50,30,0,30">
+                        <Grid Margin="-1,0,1.218,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+
+                            <StackPanel Grid.Row="1" Margin="8,8,8,4">
+                                <TextBlock
+                                    Margin="5,0,0,10"
+                                    FontSize="22"
+                                    Style="{StaticResource MaterialDesignSubheadingTextBlock}">
+                                    EXPENSES
+                                </TextBlock>
+                                <TextBox
+                                    x:Name="itemname"
+                                    Margin="5,0,0,5"
+                                    FontSize="12"
+                                    materialDesign:HintAssist.Hint="Name of the Item"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                <TextBox
+                                    x:Name="expenditure"
+                                    Margin="5,0,0,5"
+                                    FontSize="12"
+                                    materialDesign:HintAssist.Hint="Expenditure"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                <TextBox
+                                    x:Name="cashierexpense"
+                                    Margin="5,0,0,5"
+                                    FontSize="12"
+                                    materialDesign:HintAssist.Hint="Cashier"
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+
+                                <DatePicker
+                                    x:Name="Expensedate"
+                                    Margin="5,15,5,15"
+                                    FontSize="12"
+                                    materialDesign:HintAssist.Hint="Date" />
+
+
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="5" Orientation="Horizontal">
+
+                                <Button
+                                    Width="200"
+                                    Margin="50,10,0,10"
+                                    VerticalAlignment="Center"
+                                    Background="#e0e0e0"
+                                    Click="AddExpensesButtonClicked"
+                                    Style="{StaticResource MaterialDesignFlatButton}">
+                                    ADD
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </materialDesign:Card>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical"  Margin="0 0 0 50">
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid HorizontalAlignment="Left">
+                                <TextBlock Foreground="Gray" Margin="50,0,0,0" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Left">
+                                    DAILY REPORT
+                                </TextBlock>
+                            </Grid>
+                            <Grid Margin="0 0 0 0">
+                                <StackPanel Margin="20 0 0 0" VerticalAlignment="Center" Orientation="Horizontal">
+                                    <TextBlock VerticalAlignment="Center" Foreground="Gray"
+                                    Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                    Transaction Date
+                                        </TextBlock>
+                                        <DatePicker
+                                x:Name="ReportDateSelector"
+                                Margin="20 0 20 0"
+                              Width="150"
+                                SelectedDateChanged="ChangereportTable"
+                              VerticalAlignment="Center"
+                              materialDesign:HintAssist.Hint="Filter by Date" />
+                                    </StackPanel>
+                            </Grid>
+                            <Grid Margin="0 0 0 0">
+                                <StackPanel Orientation="Horizontal" Margin="250,0,0,0">
+                                    <Button
+                                    Width="30"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Click="DailyReportExcel"
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                                    ToolTip="Excel Export">
+                                        <materialDesign:PackIcon
+                                        Width="17"
+                                        Height="17"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Kind="FileExcel" />
+                                    </Button>
+                                        <Button
+                                    Width="30"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                        Click="refreshTableDaily"
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                                    ToolTip="Refresh Data">
+                                            <materialDesign:PackIcon
+                                Width="17"
+                                Height="17"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Kind="Refresh" />
+                                        </Button>                                        
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <DataGrid
+                            x:Name="DataGrid"
+                            Width="780"
+                            Height="350"
+                            Margin="50 20 30 0"
+                            AutoGenerateColumns="False"
+                            CanUserAddRows="False"
+                            CanUserSortColumns="True"
+                            ItemsSource="{Binding Items3}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn
+                            Width="1.6*"
+                            Binding="{Binding Date}"
+                            EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                            Header="Date" />
+                                <materialDesign:MaterialDataGridTextColumn
+                            Width="1*"
+                            Binding="{Binding Item}"
+                            EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                            Header="Item" />
+                                <materialDesign:MaterialDataGridTextColumn
+                            Width="1*"
+                            Binding="{Binding Type}"
+                            EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                            Header="Transaction Type" />
+                                <materialDesign:MaterialDataGridTextColumn
+                            Width="0.8*"
+                            Binding="{Binding Price}"
+                            EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                            Header="Price" />
+                                <materialDesign:MaterialDataGridTextColumn
+                            Width="1*"
+                            Binding="{Binding Cashier}"
+                            EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                            Header="Cashier"
+                            MaxLength="255" />
+                                
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                    <StackPanel Margin="0 50 0 00">
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                                <Grid HorizontalAlignment="Left">
+                                    <TextBlock Foreground="Gray" Margin="50,0,0,0" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Left">
+                                    WEEKLY REPORT
+                                    </TextBlock>
+                                </Grid>
+                                <Grid Margin="0 0 0 0">
+                                <StackPanel Orientation="Horizontal" Margin="300,0,0,0">
+                                    <Button
+                                    Width="30"
+                                    Height="30"
+                                        Click="weekToExcel"
+                                    Margin="10,0,0,0"
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                                    ToolTip="Excel Export">
+                                        <materialDesign:PackIcon
+                                        Width="17"
+                                        Height="17"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Kind="FileExcel" />
+                                    </Button>
+                                        <Button
+                                    Width="30"
+                                    Height="30"
+                                        Click="RefreshWeek"
+                                    Margin="10,0,0,0"
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                                    ToolTip="Refresh Data">
+                                            <materialDesign:PackIcon
+                                Width="17"
+                                Height="17"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Kind="Refresh" />
+                                        </Button>
+                                        <Grid Width="200" Margin="15,0,0,0">
+                                        <TextBox
+                                            x:Name="WeekTextBox"
+                                            KeyUp="SearchWeek"
+                                            Margin="7,10,0,10"
+                                            materialDesign:HintAssist.Hint="Search..."
+                                            ToolTip="Search Payments Using Name Id">
+                                            <TextBox.Text>
+                                                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged" />
+                                            </TextBox.Text>
+                                        </TextBox>
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                            <Grid>
+                                <DataGrid
+                            x:Name="WeeklyDataGrid"
+                            Width="780"
+                            Height="350"
+                            Margin="50 0 30 0"
+                            AutoGenerateColumns="False"
+                            LoadingRow="roweventhandler"
+                            CanUserAddRows="False"
+                            CanUserSortColumns="True"
+                            ItemsSource="{Binding Items3}">
+
+                                    <DataGrid.Columns>
+
+                                        <DataGridTextColumn
+                                    Width="1.8*"
+                                    Binding="{Binding Date}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
+                                    Header="Date" />
+                                        <materialDesign:MaterialDataGridTextColumn
+                                    Width="1.1*"
+                                    Binding="{Binding Sale}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                                    Header="Sale" />
+
+                                        <materialDesign:MaterialDataGridTextColumn
+                                    Width="0.75*"
+                                    Binding="{Binding Expense}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                                    Header="Expense" />
+                                        <materialDesign:MaterialDataGridTextColumn
+                                    Width="0.75*"
+                                    Binding="{Binding Net}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"
+                                    Header="Net" />
+
+                                    </DataGrid.Columns>
+
+                                </DataGrid>
+                            </Grid>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+
+
+        </StackPanel>
+
+    </ScrollViewer>
+    </Grid>
+    
+</UserControl>
